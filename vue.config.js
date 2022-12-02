@@ -17,6 +17,6 @@ module.exports = {
 //     ? '/crud-latest/'
 //     : '/'
 // }
-module.exports = {
-    publicPath: '/crud-latest/'
-}
+// module.exports = {
+//     publicPath: '/crud-latest/'
+// }

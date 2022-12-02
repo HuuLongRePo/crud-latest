@@ -32,9 +32,7 @@
             <AppButton label="Yes" icon="pi pi-check" autofocus @click="runFunction()" />
         </template>
     </ProductDialog>
-    <ConfirmDialog>
-
-    </ConfirmDialog>
+    <ConfirmDialog />
 </div>
 </template>
 
@@ -54,9 +52,6 @@ export default {
         }
     },
     created() {
-        // this.fetchProduct();
-    },
-    mounted() {
         this.fetchProduct();
     },
     methods: {
@@ -69,14 +64,12 @@ export default {
             fetch(this.linkFetch).then(res => res.json()).then(data => this.products = data).catch(error => {
                 console.error(error);
             });
-            console.log(this.products);
         },
         createProduct() {
             this.product = {};
             this.isEdit = false;
             this.changeheader = "Create Product";
             this.displaydialog = true;
-
         },
         hideDialog() {
             this.displaydialog = false;
@@ -121,10 +114,8 @@ export default {
             } else {
                 this.createProductAPI();
             }
-
         },
         confirmDeleteProduct(data) {
-            console.log(data.id);
             this.displayDeleteDialog = true;
             this.$confirm.require({
                 message: 'Are you sure you want to proceed?',
@@ -150,9 +141,7 @@ export default {
             this.displaydialog = true;
             this.changeheader = "Edit Product";
             this.isEdit = true;
-            // this.ProductUpdate = data;
         },
-
     },
 }
 </script>
